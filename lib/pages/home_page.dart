@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:m6_project_1/service/log_service.dart';
 import 'package:m6_project_1/service/utils_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
             MaterialButton(
                 onPressed: (){
                   Utils.showToast('Welcome to project');
+                  LogService.e("message");
                 },
               child: const Text('Click Me'),
             )
