@@ -23,7 +23,10 @@ class _HomePageState extends State<HomePage> {
             MaterialButton(
                 onPressed: (){
                   Utils.showToast('Welcome to project');
-                  LogService.e("message");
+                  Utils.deviceParams().then((value){
+                    LogService.w(value.toString());
+                 });
+
                 },
               child: const Text('Click Me'),
             )
