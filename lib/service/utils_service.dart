@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -69,6 +70,34 @@ class Utils{
       print("More recent beta available");
     }
   }
+
+  static void dialog(BuildContext context){
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.info,
+      animType: AnimType.rightSlide,
+      title: 'Dialog Title',
+      desc: 'Dialog description here.............',
+      btnCancelOnPress: () {},
+      btnOkOnPress: () {},
+    ).show();
+  }
+
+  static void dialog1(BuildContext context){
+    AwesomeDialog(
+      context: context,
+      animType: AnimType.scale,
+      dialogType: DialogType.info,
+      body: const Center(child: Text(
+        'If the body is specified, then title and description will be ignored, this allows to 											further customize the dialogue.',
+        style: TextStyle(fontStyle: FontStyle.italic),
+      ),),
+      title: 'This is Ignored',
+      desc:   'This is also Ignored',
+      btnOkOnPress: () {},
+    ).show();
+  }
+
 }
 
 
