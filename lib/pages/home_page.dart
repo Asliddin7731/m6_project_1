@@ -22,11 +22,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             MaterialButton(
                 onPressed: (){
-                  Utils.showToast('Welcome to project');
-                  Utils.deviceParams().then((value){
-                    LogService.w(value.toString());
-                 });
-
+                  // Utils.makePhoneCall('+99891');
+                  Utils.launchInBrowser(Uri.parse('https://pub.dev/'));
                 },
               child: const Text('Click Me'),
             )

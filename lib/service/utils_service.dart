@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Utils{
   static showToast (String msg) {
@@ -37,4 +38,20 @@ class Utils{
 
     return params;
   }
+
+  static Future<void> makePhoneCall(String phoneNumber) async{
+    final Uri launchUri = Uri(scheme: 'tel',path: phoneNumber);
+    await launchUrl(launchUri);
+  }
+
+  static Future<void> launchInBrowser(Uri url) async{
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)){
+
+    }else{
+      throw 'Could not launch $url';
+    }
+  }
 }
+
+
+
