@@ -4,6 +4,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:version/version.dart';
 
 class Utils{
   static showToast (String msg) {
@@ -49,6 +50,23 @@ class Utils{
 
     }else{
       throw 'Could not launch $url';
+    }
+  }
+
+  static void mol() {
+    final Version currentVersion = Version(1, 0, 3);
+    final Version latestVersion = Version.parse("2.1.0");
+
+    if (latestVersion > currentVersion) {
+      print("Update is available");
+    }
+
+    final Version betaVersion =
+    Version(2, 1, 0, preRelease: <String>["beta"]);
+    // Note: this test will return false, as pre-release versions are considered
+    // lesser then a non-pre-release version that otherwise has the same numbers.
+    if (betaVersion > latestVersion) {
+      print("More recent beta available");
     }
   }
 }

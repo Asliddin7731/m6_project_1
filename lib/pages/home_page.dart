@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:m6_project_1/main.dart';
 import 'package:m6_project_1/service/log_service.dart';
 import 'package:m6_project_1/service/utils_service.dart';
 
@@ -23,7 +24,8 @@ class _HomePageState extends State<HomePage> {
             MaterialButton(
                 onPressed: (){
                   // Utils.makePhoneCall('+99891');
-                  Utils.launchInBrowser(Uri.parse('https://pub.dev/'));
+                  // Utils.launchInBrowser(Uri.parse('https://pub.dev/'));
+                  Utils.mol();
                 },
               child: const Text('Click Me'),
             )
