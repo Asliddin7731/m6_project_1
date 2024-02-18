@@ -1,5 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:m6_project_1/service/utils_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,17 +16,79 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Best'),
       ),
       body: Container(
+        width: double.infinity,
         padding: const EdgeInsets.all(30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             MaterialButton(
+              height: 40,
+              minWidth: double.infinity,
+              color: Colors.blue,
                 onPressed: (){
-                  // Utils.makePhoneCall('+99891');
-                  // Utils.launchInBrowser(Uri.parse('https://pub.dev/'));
-                  // Utils.mol();
-                  Utils.dialog1(context);
+
                 },
-              child: const Text('Click Me'),
+              child: const Text('str_packages').tr(),
+            ),
+            MaterialButton(
+              height: 40,
+              minWidth: double.infinity,
+              color: Colors.blue,
+              onPressed: (){
+
+              },
+              child: const Text('str_localization').tr(),
+            ),
+            MaterialButton(
+              height: 40,
+              minWidth: double.infinity,
+              color: Colors.blue,
+              onPressed: (){
+
+              },
+              child: const Text('str_local_databases').tr(),
+            ),
+            MaterialButton(
+              height: 40,
+              minWidth: double.infinity,
+              color: Colors.blue,
+              onPressed: (){
+
+              },
+              child: const Text('str_networking').tr(),
+            ),
+            const SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MaterialButton(
+                  minWidth: 100,
+                  height: 40,
+                  color: Colors.orange,
+                  onPressed: (){
+                    context.setLocale(const Locale('uz', 'UZ'));
+                  },
+                  child: const Text('Uzbek'),
+                ),
+                MaterialButton(
+                  minWidth: 100,
+                  height: 40,
+                  color: Colors.red,
+                  onPressed: (){
+                    context.setLocale(const Locale('ru', 'RU'));
+                  },
+                  child: const Text('Russia'),
+                ),
+                MaterialButton(
+                  minWidth: 100,
+                  height: 40,
+                  color: Colors.green,
+                  onPressed: (){
+                    context.setLocale(const Locale('en', 'US'));
+                  },
+                  child: const Text('English'),
+                )
+              ],
             )
           ],
         ),
