@@ -10,7 +10,10 @@ void main() async {
         supportedLocales: const [
           Locale('en', 'US'),
           Locale('ru', 'RU'),
-          Locale('uz', 'UZ')
+          Locale('uz', 'UZ'),
+          Locale('fr', 'FR'),
+          Locale('ja', 'JP'),
+          Locale('ko', 'KR')
         ],
         path: 'assets/translations', // <-- change the path of the translation files
         fallbackLocale: const Locale('en', 'US'),

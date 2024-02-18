@@ -58,11 +58,12 @@ class _HomePageState extends State<HomePage> {
               child: const Text('str_networking').tr(),
             ),
             const SizedBox(height: 50),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              spacing: 20,
+              runSpacing: 10,
               children: [
                 MaterialButton(
-                  minWidth: 100,
+                  minWidth: 150,
                   height: 40,
                   color: Colors.orange,
                   onPressed: (){
@@ -71,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                   child: const Text('Uzbek'),
                 ),
                 MaterialButton(
-                  minWidth: 100,
+                  minWidth: 150,
                   height: 40,
                   color: Colors.red,
                   onPressed: (){
@@ -80,13 +81,42 @@ class _HomePageState extends State<HomePage> {
                   child: const Text('Russia'),
                 ),
                 MaterialButton(
-                  minWidth: 100,
+                  minWidth: 150,
                   height: 40,
                   color: Colors.green,
                   onPressed: (){
                     context.setLocale(const Locale('en', 'US'));
                   },
                   child: const Text('English'),
+                ),
+                MaterialButton(
+                  minWidth: 150,
+                  height: 40,
+                  color: Colors.yellow,
+                  onPressed: (){
+                    context.setLocale(const Locale('fr', 'FR'));
+                  },
+                  child: const Text('French'),
+                ),
+                MaterialButton(
+                  minWidth: 150,
+                  height: 40,
+                  color: Colors.cyanAccent,
+                  onPressed: (){
+                    context.setLocale(const Locale('ja', 'JP'));
+                  },
+                  child: const Text('Japanese'
+                      ),
+                ),
+                MaterialButton(
+                  minWidth: 150,
+                  height: 40,
+                  color: Colors.purpleAccent,
+                  onPressed: (){
+                    context.setLocale(const Locale('ko', 'KR'));
+                  },
+                  child: const Text('Korean'
+                  ),
                 )
               ],
             )
